@@ -1,0 +1,7 @@
+# Intellij IDE
+.idea/
+out/
+.DS_Store
+
+# Connect to local DB Server
+controllers/DBConnection
