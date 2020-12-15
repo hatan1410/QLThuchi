@@ -5,3 +5,4 @@ out/
 
 # Connect to local DB Server
 controllers/DBConnection
+/bin/

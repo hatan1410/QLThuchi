@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="450.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label layoutX="64.0" layoutY="108.0" text="ID Chi" AnchorPane.leftAnchor="30.0" />
+      <TextField layoutX="191.0" layoutY="102.0" prefHeight="39.0" prefWidth="386.0" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="30.0" />
+      <Label layoutX="64.0" layoutY="162.0" text="ID danh mục" AnchorPane.leftAnchor="30.0" />
+      <TextField layoutX="414.0" layoutY="156.0" prefHeight="39.0" prefWidth="196.0" AnchorPane.rightAnchor="30.0" />
+      <Label layoutX="63.0" layoutY="217.0" text="Số tiền" AnchorPane.leftAnchor="30.0" />
+      <TextField layoutX="191.0" layoutY="211.0" prefHeight="39.0" prefWidth="386.0" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="30.0" />
+      <Label layoutX="63.0" layoutY="276.0" text="Ngày" AnchorPane.leftAnchor="30.0" />
+      <TextField layoutX="191.0" layoutY="270.0" prefHeight="39.0" prefWidth="386.0" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="30.0" />
+      <Label layoutX="62.0" layoutY="333.0" text="Mã ví" AnchorPane.leftAnchor="30.0" />
+      <TextField layoutX="414.0" layoutY="327.0" prefHeight="39.0" prefWidth="196.0" AnchorPane.rightAnchor="30.0" />
+      <ComboBox layoutX="191.0" layoutY="156.0" prefHeight="39.0" prefWidth="213.0" AnchorPane.leftAnchor="150.0" />
+      <ComboBox layoutX="191.0" layoutY="327.0" prefHeight="39.0" prefWidth="213.0" AnchorPane.leftAnchor="150.0" />
+      <Label layoutX="223.0" layoutY="46.0" text="THÊM KHOẢN CHI" />
+      <Button layoutX="261.0" layoutY="385.0" mnemonicParsing="false" text="Thêm" />
+   </children>
+</AnchorPane>
