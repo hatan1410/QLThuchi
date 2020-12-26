@@ -6,21 +6,21 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoginController">
    <children>
       <HBox layoutX="159.0" layoutY="325.0" prefHeight="48.0" prefWidth="459.0" spacing="20.0">
          <children>
             <Label text="Username" />
-            <TextField prefHeight="39.0" prefWidth="348.0" />
+            <TextField fx:id="tfUsername" prefHeight="39.0" prefWidth="348.0" />
          </children>
       </HBox>
       <HBox layoutX="159.0" layoutY="402.0" prefHeight="48.0" prefWidth="459.0" spacing="20.0">
          <children>
             <Label text="Password " />
-            <PasswordField prefHeight="39.0" prefWidth="350.0" />
+            <PasswordField fx:id="tfPassword" prefHeight="39.0" prefWidth="350.0" />
          </children>
       </HBox>
-      <Button layoutX="361.0" layoutY="492.0" mnemonicParsing="false" text="Login" />
+      <Button layoutX="361.0" layoutY="492.0" mnemonicParsing="false" onAction="#login" text="Login" />
       <ImageView fitHeight="282.0" fitWidth="466.0" layoutX="180.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../image/icon.jpg" />

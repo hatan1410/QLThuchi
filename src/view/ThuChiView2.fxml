@@ -24,9 +24,9 @@
                               <TableColumn fx:id="colViThu" prefWidth="108.0" text="Ví" />
                           </columns>
                         </TableView>
-                        <TextField fx:id="tfSearchThu" layoutX="5.0" layoutY="30.0" maxHeight="40.0" maxWidth="200.0" prefHeight="40.0" prefWidth="200.0" />
-                        <HBox layoutX="237.0" layoutY="30.0" prefHeight="51.0" prefWidth="549.0" spacing="10.0" AnchorPane.bottomAnchor="525.0" AnchorPane.leftAnchor="237.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="30.0">
+                        <HBox layoutX="237.0" layoutY="30.0" prefHeight="51.0" prefWidth="549.0" spacing="10.0" AnchorPane.bottomAnchor="525.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="30.0">
                            <children>
+                              <TextField fx:id="tfSearchThu" maxHeight="40.0" maxWidth="220.0" prefHeight="40.0" prefWidth="220.0" />
                               <ComboBox fx:id="cbSearchThu" prefHeight="40.0" prefWidth="100.0" />
                               <Button mnemonicParsing="false" onAction="#searchThu" prefHeight="40.0" prefWidth="100.0" text="Tìm kiếm" />
                               <Button layoutX="160.0" layoutY="10.0" mnemonicParsing="false" onAction="#addThu" prefHeight="40.0" prefWidth="100.0" text="Thêm mới" />
@@ -55,9 +55,9 @@
                               <TableColumn fx:id="colViChi" prefWidth="102.0" text="Tên ví" />
                           </columns>
                         </TableView>
-                        <TextField fx:id="tfSearchChi" layoutX="5.0" layoutY="30.0" maxHeight="40.0" maxWidth="220.0" prefHeight="40.0" prefWidth="220.0" />
-                        <HBox layoutX="244.0" prefHeight="45.0" prefWidth="551.0" spacing="15.0" AnchorPane.bottomAnchor="531.0" AnchorPane.leftAnchor="244.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="30.0">
+                        <HBox layoutX="244.0" prefHeight="45.0" prefWidth="551.0" spacing="10.0" AnchorPane.bottomAnchor="531.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="30.0">
                            <children>
+                              <TextField fx:id="tfSearchChi" maxHeight="40.0" maxWidth="220.0" prefHeight="40.0" prefWidth="220.0" />
                               <ComboBox fx:id="cbSearchChi" prefHeight="40.0" prefWidth="100.0" />
                               <Button mnemonicParsing="false" onAction="#searchChi" prefHeight="40.0" prefWidth="95.0" text="Tìm kiếm" />
                               <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#addChi" prefHeight="40.0" prefWidth="90.0" text="Thêm mới" />

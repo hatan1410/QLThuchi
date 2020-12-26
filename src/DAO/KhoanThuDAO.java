@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
+import model.KhoanChiModel;
 import model.KhoanThuModel;
 
 public class KhoanThuDAO {
@@ -13,18 +14,24 @@ public class KhoanThuDAO {
 		Connection cnn = DBConnection.open();
 		PreparedStatement pStatement = null;
 		ResultSet rSet = null;
-		ArrayList<KhoanThuModel> listThu = null;
+		ArrayList<KhoanThuModel> listThu = new ArrayList<KhoanThuModel>();
 		try {
-			pStatement = (PreparedStatement) cnn.prepareStatement("SELECT * FROM ThuTien");
+			pStatement = (PreparedStatement) cnn.prepareStatement("SELECT Thutien.IDThu,Thutien.IDDanhMuc,DanhMucChi.LoaiDanhMuc,Thutien.SoTien, Thutien.Ngay,Thutien.IDVi, Vi.TenVi\r\n" + 
+					"FROM Thutien, DanhMucChi, Vi\r\n" + 
+					"WHERE Thutien.IDDanhMuc = DanhMucChi.IDDanhMuc \r\n" + 
+					"AND Thutien.IDVi = Vi.IDVi;");
 			rSet = pStatement.executeQuery();
 			while(rSet.next()) {
-				String maKhoanThu = rSet.getString(1);
-				String tenKhoanThu = rSet.getString(2);
-				int tien = rSet.getInt(3);
-				String ngay = rSet.getDate(4).toString();
-				String vi = rSet.getString(5);
-				KhoanThuModel khoanThuModel = new KhoanThuModel(maKhoanThu,tenKhoanThu,tien,ngay,vi);
-				listThu.add(khoanThuModel);	
+				String maThu = rSet.getString(1);
+				String maDanhMuc = rSet.getString(2);
+				String tenDanhMuc = rSet.getString(3);
+				int soTien = rSet.getInt(4);
+				String ngay = rSet.getDate(5).toString();
+				String maVi = rSet.getString(6);
+				String tenVi = rSet.getString(7);
+			
+				KhoanThuModel khoanthu = new KhoanThuModel(maThu, maDanhMuc, tenDanhMuc, soTien, ngay, maVi, tenVi);
+				listThu.add(khoanthu);	
 			}
 		}
 		catch (Exception e) {
@@ -34,9 +41,42 @@ public class KhoanThuDAO {
 		return listThu;
 	}
 	
-	public static void addKhoanThu() {
-		
-		
+	public static void addKhoanThu(KhoanThuModel khoanThuModel) {
+		Connection cnn = DBConnection.open();
+		PreparedStatement pStatement = null;
+		ResultSet rSet = null;
+		try {
+			String maThu = khoanThuModel.getMaThu();
+			String maDanhMuc = khoanThuModel.getMaDanhMuc();
+			String tenDanhMuc = khoanThuModel.getTenDanhMuc();
+			int soTien = khoanThuModel.getSoTien();
+			String ngay = khoanThuModel.getNgay();
+			String maVi = khoanThuModel.getMaVi();
+			String tenVi = khoanThuModel.getTenVi();
+			
+			String query = "INSERT INTO Thutien VALUES ('" + maThu + "','" + maDanhMuc + "','" + tenDanhMuc + "',"
+	                + soTien + ",'" + ngay +"','" + maVi+  "','" + tenVi +"';";
+			pStatement = (PreparedStatement) cnn.prepareStatement(query);
+			pStatement.executeUpdate();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public static void deleteKhoanThu(KhoanThuModel khoanThuModel) {
+		Connection cnn = DBConnection.open();
+		PreparedStatement pStatement = null;
+		ResultSet rSet = null;
+		try {
+			String maThu = khoanThuModel.getMaThu();
+			String query = "DELETE FROM ChiTieu WHERE MaChi = '" + maThu + "'";
+			pStatement = (PreparedStatement) cnn.prepareStatement(query);
+			pStatement.executeUpdate();
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 }

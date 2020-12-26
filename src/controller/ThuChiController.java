@@ -1,6 +1,7 @@
 package controller;
 
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
 
 import DAO.KhoanChiDAO;
@@ -37,13 +38,17 @@ public class ThuChiController implements Initializable {
     @FXML
     private TableColumn<KhoanChiModel, String> colMaChi;
     @FXML
-    private TableColumn<KhoanChiModel, String> colTenChi;
+    private TableColumn<KhoanChiModel, String> colMaDMChi;
+    @FXML
+    private TableColumn<KhoanChiModel, String> colTenDMChi;
     @FXML
     private TableColumn<KhoanChiModel, Integer> colTienChi;
     @FXML
     private TableColumn<KhoanChiModel, String> colNgayChi;
     @FXML
     private TableColumn<KhoanChiModel, String> colViChi;
+    @FXML
+    private TableColumn<KhoanChiModel, String> colMaViChi;;
     // thu tiền
     @FXML
     private Tab tabThu;
@@ -56,22 +61,29 @@ public class ThuChiController implements Initializable {
     @FXML
     private TableColumn<KhoanThuModel, String> colMaThu;
     @FXML
-    private TableColumn<KhoanThuModel, String> colTenThu;
+    private TableColumn<KhoanThuModel, String> colMaDMThu;
+    @FXML
+    private TableColumn<KhoanThuModel, String> colTenDMThu;
     @FXML
     private TableColumn<KhoanThuModel, Integer> colTienThu;
     @FXML
     private TableColumn<KhoanThuModel, String> colNgayThu;
     @FXML
+    private TableColumn<KhoanThuModel, String> colMaViThu;
+    @FXML
     private TableColumn<KhoanThuModel, String> colViThu;
     // Danh sách khoản thu
-	private ObservableList<KhoanThuModel> listKhoanThu;
+	private ObservableList<KhoanThuModel> listKhoanThu = null;
     // Danh sách khoản chi
-	private ObservableList<KhoanChiModel> listKhoanChi;
+	private ObservableList<KhoanChiModel> listKhoanChi = null;
 	
 	private String username;
 	
 	public void setUsername(String username) {
 		this.username = username;
+		showKhoanChi();
+		//showKhoanThu();
+
 	}
 
 	@Override
@@ -83,13 +95,13 @@ public class ThuChiController implements Initializable {
 	
 	public void initTab1() {
 		initCbTimKiemThu();
-		showKhoanThu();
-		
+	//	showKhoanThu();		
 		
 	}
 	
 	public void initTab2() {
 		initCbTimKiemChi();
+	//	showKhoanChi();
 		
 	}
 	
@@ -106,29 +118,36 @@ public class ThuChiController implements Initializable {
 	
 	public void showKhoanThu() {
 		listKhoanThu = FXCollections.observableArrayList(KhoanThuDAO.getListKhoanThu());
+		System.out.println(listKhoanThu.size());
 		colMaThu.setCellValueFactory(new PropertyValueFactory<KhoanThuModel, String>("maThu"));
-		colTenThu.setCellValueFactory(new PropertyValueFactory<KhoanThuModel, String>("tenDanhMuc"));
+		colMaDMThu.setCellValueFactory(new PropertyValueFactory<KhoanThuModel, String>("maDanhMuc"));
+		colTenDMThu.setCellValueFactory(new PropertyValueFactory<KhoanThuModel, String>("tenDanhMuc"));
 		colTienThu.setCellValueFactory(new PropertyValueFactory<KhoanThuModel, Integer>("soTien"));
 		colNgayThu.setCellValueFactory(new PropertyValueFactory<KhoanThuModel, String>("Ngay"));
+		colMaViThu.setCellValueFactory(new PropertyValueFactory<KhoanThuModel, String>("maVi"));
 		colViThu.setCellValueFactory(new PropertyValueFactory<KhoanThuModel, String>("tenVi"));
 		tvThu.setItems(listKhoanThu);
 			
 	}
 	
 	public void showKhoanChi() {
-		listKhoanChi = FXCollections.observableArrayList(KhoanChiDAO.getListKhoanChi());
-		colMaThu.setCellValueFactory(new PropertyValueFactory<KhoanThuModel, String>("maThu"));
-		colTenThu.setCellValueFactory(new PropertyValueFactory<KhoanThuModel, String>("tenDanhMuc"));
-		colTienThu.setCellValueFactory(new PropertyValueFactory<KhoanThuModel, Integer>("soTien"));
-		colNgayThu.setCellValueFactory(new PropertyValueFactory<KhoanThuModel, String>("Ngay"));
-		colViThu.setCellValueFactory(new PropertyValueFactory<KhoanThuModel, String>("tenVi"));
+		listKhoanChi = FXCollections.observableArrayList(KhoanChiDAO.getListKhoanChi(username));
+		System.out.println(listKhoanChi.size());
+		colMaChi.setCellValueFactory(new PropertyValueFactory<KhoanChiModel, String>("maChi"));
+		colMaDMChi.setCellValueFactory(new PropertyValueFactory<KhoanChiModel, String>("maDanhMuc"));
+		colTenDMChi.setCellValueFactory(new PropertyValueFactory<KhoanChiModel, String>("tenDanhChi"));
+		colTienChi.setCellValueFactory(new PropertyValueFactory<KhoanChiModel, Integer>("soTien"));
+		colNgayChi.setCellValueFactory(new PropertyValueFactory<KhoanChiModel, String>("Ngay"));
+		colMaViChi.setCellValueFactory(new PropertyValueFactory<KhoanChiModel, String>("maVi"));
+		colViChi.setCellValueFactory(new PropertyValueFactory<KhoanChiModel, String>("tenVi"));
 		tvChi.setItems(listKhoanChi);
 			
 		
 	}
     @FXML
-    void addThu(ActionEvent event) {
+    public void addThu(ActionEvent event) {
     	try {
+    		System.out.println(username);
 			Parent root = FXMLLoader.load(getClass().getResource("/view/AddKhoanThuView.fxml"));
 			Stage stage = new Stage();
 			stage.setScene(new Scene(root));
