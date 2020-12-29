@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="450.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="450.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1 fx:controller="controller.ThuChi.AddThuController"">
    <children>
       <Label layoutX="64.0" layoutY="108.0" text="ID Thu" AnchorPane.leftAnchor="30.0" />
       <TextField layoutX="191.0" layoutY="102.0" prefHeight="39.0" prefWidth="386.0" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="30.0" />

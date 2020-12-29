@@ -6,6 +6,7 @@ import java.util.ResourceBundle;
 
 import DAO.KhoanChiDAO;
 import DAO.KhoanThuDAO;
+import controller.ThuChi.AddThuController;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -147,11 +148,18 @@ public class ThuChiController implements Initializable {
     @FXML
     public void addThu(ActionEvent event) {
     	try {
-    		System.out.println(username);
-			Parent root = FXMLLoader.load(getClass().getResource("/view/AddKhoanThuView.fxml"));
+    		
+    		FXMLLoader loader = new FXMLLoader();
+    		loader.setLocation(getClass().getResource("/view/AddKhoanThuView.fxml"));
+    		
+    		Parent root = loader.load();
 			Stage stage = new Stage();
 			stage.setScene(new Scene(root));
 			stage.setTitle("THÊM KHOẢN THU");
+			
+			AddThuController controller = (AddThuController) loader.getController();
+			controller.setUsername(username);
+			
 			stage.showAndWait();
 			showKhoanThu();
     	} catch (Exception e) {

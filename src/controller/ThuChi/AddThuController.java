@@ -1,5 +1,6 @@
 package controller.ThuChi;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
@@ -31,6 +32,10 @@ public class AddThuController {
 	
 	public void setUsername(String username) {
 		this.username = username;
+	}
+	
+	public void addThu(ActionEvent event) {
+		
 	}
 
 }
