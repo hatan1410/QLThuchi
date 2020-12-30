@@ -1,6 +1,7 @@
 package controller;
 
 import java.io.IOException;
+import java.sql.SQLException;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -21,7 +22,7 @@ public class mainController {
 	}
 
     @FXML
-    public void showThuChi(ActionEvent event) throws IOException {
+    public void showThuChi(ActionEvent event) throws IOException, SQLException {
     	
     	FXMLLoader loader = new FXMLLoader(ThuChiController.class.getResource("/view/ThuChiView2.fxml"));
 		Pane thuchiPane = (Pane) loader.load();

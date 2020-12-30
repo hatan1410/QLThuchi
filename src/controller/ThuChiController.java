@@ -1,11 +1,12 @@
 package controller;
 
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.List;
 import java.util.ResourceBundle;
 
-import DAO.KhoanChiDAO;
-import DAO.KhoanThuDAO;
+import dao.KhoanChiDAO;
+import dao.KhoanThuDAO;
 import controller.ThuChi.AddThuController;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -80,7 +81,7 @@ public class ThuChiController implements Initializable {
 	
 	private String username;
 	
-	public void setUsername(String username) {
+	public void setUsername(String username) throws SQLException {
 		this.username = username;
 		showKhoanChi();
 		//showKhoanThu();
@@ -117,7 +118,7 @@ public class ThuChiController implements Initializable {
 		cbSearchChi.setItems(list);
 	}
 	
-	public void showKhoanThu() {
+	public void showKhoanThu() throws SQLException {
 		listKhoanThu = FXCollections.observableArrayList(KhoanThuDAO.getListKhoanThu());
 		System.out.println(listKhoanThu.size());
 		colMaThu.setCellValueFactory(new PropertyValueFactory<KhoanThuModel, String>("maThu"));
@@ -131,7 +132,7 @@ public class ThuChiController implements Initializable {
 			
 	}
 	
-	public void showKhoanChi() {
+	public void showKhoanChi() throws SQLException {
 		listKhoanChi = FXCollections.observableArrayList(KhoanChiDAO.getListKhoanChi(username));
 		System.out.println(listKhoanChi.size());
 		colMaChi.setCellValueFactory(new PropertyValueFactory<KhoanChiModel, String>("maChi"));

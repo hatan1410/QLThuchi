@@ -1,8 +1,9 @@
-package DAO;
+package dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,7 +11,7 @@ import model.KhoanChiModel;
 import model.KhoanThuModel;
 
 public class KhoanThuDAO {
-	public static List<KhoanThuModel> getListKhoanThu() {
+	public static List<KhoanThuModel> getListKhoanThu() throws SQLException {
 		Connection cnn = DBConnection.open();
 		PreparedStatement pStatement = null;
 		ResultSet rSet = null;
@@ -41,7 +42,7 @@ public class KhoanThuDAO {
 		return listThu;
 	}
 	
-	public static void addKhoanThu(KhoanThuModel khoanThuModel) {
+	public static void addKhoanThu(KhoanThuModel khoanThuModel) throws SQLException {
 		Connection cnn = DBConnection.open();
 		PreparedStatement pStatement = null;
 		ResultSet rSet = null;
@@ -64,7 +65,7 @@ public class KhoanThuDAO {
 		}
 	}
 	
-	public static void deleteKhoanThu(KhoanThuModel khoanThuModel) {
+	public static void deleteKhoanThu(KhoanThuModel khoanThuModel) throws SQLException {
 		Connection cnn = DBConnection.open();
 		PreparedStatement pStatement = null;
 		ResultSet rSet = null;

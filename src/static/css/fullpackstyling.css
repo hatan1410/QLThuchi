@@ -1,33 +1,33 @@
 .buttonMain
 {
--fx-background-color : #558B57;
+-fx-background-color : #5EC960;
 }
 .buttonMain:hover
 {
--fx-background-color : #83AF7F ;
+-fx-background-color : #4bc14d;
 }
 .buttonMain:pressed
 {
--fx-background-color : #276733 ;
+-fx-background-color : #93DB95 ;
 }
 .buttonMain:focused
 {
-    -fx-background-color: #83AF7F;
+    -fx-background-color: #47ba49;
     -fx-border-color: #FBF7E7;
     -fx-border-width: 0px 0px 0px 3px;
 }
 
 .button
 {
--fx-background-color : #558B57;
+-fx-background-color : #5EC960;
 }
 .button:hover
 {
--fx-background-color : #83AF7F ;
+-fx-background-color : #4bc14d ;
 }
 .button:pressed
 {
--fx-background-color : #276733 ;
+-fx-background-color : #93DB95 ;
 }
 
 .button2

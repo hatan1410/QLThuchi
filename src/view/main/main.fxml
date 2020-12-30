@@ -1,27 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import javafx.geometry.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="651.0" prefWidth="1072.0" style="-fx-background-color: #FBF7E7;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.mainController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="651.0" prefWidth="1072.0" style="-fx-background-color: #F4F4F4;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.mainController">
     <children>
         <BorderPane fx:id="mainpane" layoutX="1.0" prefHeight="306.0" prefWidth="609.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <left>
-                <AnchorPane prefHeight="651.0" prefWidth="272.0" style="-fx-background-color: #558B57;" BorderPane.alignment="CENTER">
+                <AnchorPane prefHeight="651.0" prefWidth="272.0" style="-fx-background-color: #5EC960;" BorderPane.alignment="CENTER">
                     <children>
-                        <ImageView fitHeight="57.0" fitWidth="55.0" layoutX="12.0" layoutY="33.0" pickOnBounds="true" preserveRatio="true" />
+                        <ImageView fitHeight="57.0" fitWidth="55.0" layoutX="21.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../static/image/coin.png" />
+                     </image></ImageView>
                         <Label layoutX="77.0" layoutY="36.0" prefHeight="54.0" prefWidth="178.0" text="MY MONEY" textFill="WHITE">
                             <font>
                                 <Font name="System Bold Italic" size="32.0" />

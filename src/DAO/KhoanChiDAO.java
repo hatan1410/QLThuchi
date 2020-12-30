@@ -1,8 +1,9 @@
-package DAO;
+package dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,7 +12,7 @@ import model.KhoanChiModel;
 
 public class KhoanChiDAO {
 	
-	public static List<KhoanChiModel> getListKhoanChi(String username) {
+	public static List<KhoanChiModel> getListKhoanChi(String username) throws SQLException {
 		Connection cnn = DBConnection.open();
 		PreparedStatement pStatement = null;
 		ResultSet rSet = null;
@@ -42,7 +43,7 @@ public class KhoanChiDAO {
 		return listChi;
 	}
 	
-	public static void addKhoanChi(KhoanChiModel khoanChiModel) {
+	public static void addKhoanChi(KhoanChiModel khoanChiModel) throws SQLException {
 		Connection cnn = DBConnection.open();
 		PreparedStatement pStatement = null;
 		ResultSet rSet = null;
@@ -65,7 +66,7 @@ public class KhoanChiDAO {
 		}
 	}
 	
-	public static void deleteKhoanChi(KhoanChiModel khoanChiModel) {
+	public static void deleteKhoanChi(KhoanChiModel khoanChiModel) throws SQLException {
 		Connection cnn = DBConnection.open();
 		PreparedStatement pStatement = null;
 		ResultSet rSet = null;
@@ -80,7 +81,7 @@ public class KhoanChiDAO {
 		}
 	}
 	
-	public static void updateKhoanChi(KhoanChiModel currentKhoanChiModel, KhoanChiModel khoanChiModel) {
+	public static void updateKhoanChi(KhoanChiModel currentKhoanChiModel, KhoanChiModel khoanChiModel) throws SQLException {
 		Connection cnn = DBConnection.open();
 		PreparedStatement pStatement = null;
 		ResultSet rSet = null;

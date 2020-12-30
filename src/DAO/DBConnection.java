@@ -1,52 +1,28 @@
-package DAO;
+package dao;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 
 public class DBConnection {
-	public static String DEFAULT_DRIVER = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
-	public static Connection open() {
-		Connection cnn = null;
+	private static Connection connection;
+	private static String url = "jdbc:sqlserver://localhost:1433;" +
+			"databaseName=QLCHITIEU;";
+	private static String user = "sa";
+	private static String password = "";
+
+	public static Connection open() throws SQLException {
 		try {
-			String driverString = DEFAULT_DRIVER;
-		    String DB_URL = "jdbc:sqlserver://localhost:1433;"
-		            + "databaseName=QLCHITIEU;";
-		    String user = "sa";
-			String pass = "123456";
-			Class.forName(driverString);
-			cnn = (Connection) DriverManager.getConnection(DB_URL,user,pass);
-		}
-		catch (Exception e) {
-			// TODO: handle exception
+			connection = DriverManager.getConnection(url, user, password);
+			//System.out.println("Database successfully connected!");
+		}catch(SQLException e){
+			System.out.println("Connect to database failed, some errors occurred!");
 			e.printStackTrace();
 		}
-		return cnn;
+		return connection;
 	}
-	public static void main(String[] args) throws SQLException {
-		Connection cnn = DBConnection.open();
-		PreparedStatement pStatement = null;
-		ResultSet rSet = null;
-		String query = "SELECT ChiTieu.IDChi,ChiTieu.IDDanhMuc,DanhMucChi.LoaiDanhMuc,ChiTieu.SoTien, ChiTieu.Ngay,ChiTieu.IDVi, Vi.TenVi\r\n" + 
-				"FROM ChiTieu, DanhMucChi, Vi\r\n" + 
-				"WHERE ChiTieu.IDChi = DanhMucChi.IDDanhMuc \r\n" + 
-				"AND ChiTieu.IDVi = Vi.TenVi " +
-				"AND ChiTieu.Username = '' ;";
-		System.out.println(query);
-		pStatement = (PreparedStatement) cnn.prepareStatement("SELECT ChiTieu.IDChi,ChiTieu.IDDanhMuc,DanhMucChi.LoaiDanhMuc,ChiTieu.SoTien, ChiTieu.Ngay,ChiTieu.IDVi, Vi.TenVi\r\n" + 
-				"FROM ChiTieu, DanhMucChi, Vi\r\n" + 
-				"WHERE ChiTieu.IDDanhMuc = DanhMucChi.IDDanhMuc \r\n" + 
-				"AND ChiTieu.IDVi = Vi.TenVi " +
-				"AND ChiTieu.Username = '' ;");
-		
-		rSet = pStatement.executeQuery();
-	//	pStatement = (PreparedStatement) cnn.prepareStatement("SELECT * FROM Vi");
-	//	rSet = pStatement.executeQuery();
-		while (rSet.next()) {
-            System.out.println(rSet.getString(1)) ;
-        }
+	public static ResultSet getData(String stringSQL, Connection conn) throws SQLException {
+		ResultSet rs = null;
+		Statement st = conn.createStatement();
+		rs = st.executeQuery(stringSQL);
+		return rs;
 	}
-
 }
