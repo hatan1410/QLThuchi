@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="651.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ThuChiController">
+    <children>
+        <TabPane layoutX="7.0" layoutY="14.0" prefHeight="651.0" prefWidth="800.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <tabs>
+                <Tab fx:id="tabThu" text="Khoản thu">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <TableView fx:id="tvThu" layoutX="107.0" layoutY="159.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="100.0">
+                                    <columns>
+                                        <TableColumn fx:id="colMaThu" prefWidth="103.0" text="Mã thu" />
+                                        <TableColumn fx:id="colMaDMThu" prefWidth="111.0" text="Mã danh mục" />
+                                        <TableColumn fx:id="colTenDMThu" prefWidth="136.0" text="Tên danh mục" />
+                                        <TableColumn fx:id="colTienThu" prefWidth="118.0" text="Số tiền" />
+                                        <TableColumn fx:id="colNgayThu" prefWidth="101.0" text="Ngày" />
+                                        <TableColumn fx:id="colMaViThu" prefWidth="112.0" text="Mã ví" />
+                                        <TableColumn fx:id="colViThu" prefWidth="108.0" text="Ví" />
+                                    </columns>
+                                </TableView>
+                                <HBox layoutX="237.0" layoutY="30.0" prefHeight="51.0" prefWidth="549.0" spacing="10.0" AnchorPane.bottomAnchor="525.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="30.0">
+                                    <children>
+                                        <TextField fx:id="tfSearchThu" maxHeight="40.0" maxWidth="220.0" prefHeight="40.0" prefWidth="220.0" />
+                                        <ComboBox fx:id="cbSearchThu" prefHeight="40.0" prefWidth="100.0" />
+                                        <Button mnemonicParsing="false" onAction="#searchThu" prefHeight="40.0" prefWidth="100.0" text="Tìm kiếm" />
+                                        <Button layoutX="160.0" layoutY="10.0" mnemonicParsing="false" onAction="#addThu" prefHeight="40.0" prefWidth="100.0" text="Thêm mới" />
+                                        <Button layoutX="238.0" layoutY="10.0" mnemonicParsing="false" onAction="#updateThu" prefHeight="40.0" prefWidth="100.0" text="Sửa" />
+                                        <Button layoutX="316.0" layoutY="10.0" mnemonicParsing="false" onAction="#deleteThu" prefHeight="40.0" prefWidth="100.0" text="Xóa" />
+                                        <Button layoutX="394.0" layoutY="10.0" mnemonicParsing="false" onAction="#importFile" prefHeight="40.0" prefWidth="100.0" text="Nhập file" />
+                                        <Button layoutX="472.0" layoutY="10.0" mnemonicParsing="false" onAction="#exportFile" prefHeight="40.0" prefWidth="100.0" text="Xuất file" />
+                                    </children>
+                                </HBox>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab fx:id="tabChi" text="Khoản chi">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <TableView fx:id="tvChi" layoutX="99.0" layoutY="130.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="100.0">
+                                    <columns>
+                                        <TableColumn fx:id="colMaChi" prefWidth="75.0" text="Mã chi" />
+                                        <TableColumn fx:id="colMaDMChi" prefWidth="75.0" text="Mã danh mục" />
+                                        <TableColumn fx:id="colTenDMChi" prefWidth="140.0" text="Tên danh mục" />
+                                        <TableColumn fx:id="colTienChi" prefWidth="159.0" text="Số tiền" />
+                                        <TableColumn fx:id="colNgayChi" prefWidth="130.0" text="Ngày" />
+                                        <TableColumn fx:id="colMaViChi" prefWidth="108.0" text="Mã ví" />
+                                        <TableColumn fx:id="colViChi" prefWidth="102.0" text="Tên ví" />
+                                    </columns>
+                                </TableView>
+                                <HBox layoutX="244.0" prefHeight="45.0" prefWidth="551.0" spacing="10.0" AnchorPane.bottomAnchor="531.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="30.0">
+                                    <children>
+                                        <TextField fx:id="tfSearchChi" maxHeight="40.0" maxWidth="220.0" prefHeight="40.0" prefWidth="220.0" />
+                                        <ComboBox fx:id="cbSearchChi" prefHeight="40.0" prefWidth="100.0" />
+                                        <Button mnemonicParsing="false" onAction="#searchChi" prefHeight="40.0" prefWidth="95.0" text="Tìm kiếm" />
+                                        <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#addChi" prefHeight="40.0" prefWidth="90.0" text="Thêm mới" />
+                                        <Button layoutX="88.0" layoutY="10.0" mnemonicParsing="false" onAction="#updateChi" prefHeight="40.0" prefWidth="90.0" text="Sửa" />
+                                        <Button layoutX="166.0" layoutY="10.0" mnemonicParsing="false" onAction="#deleteChi" prefHeight="40.0" prefWidth="90.0" text="Xóa" />
+                                        <Button layoutX="244.0" layoutY="10.0" mnemonicParsing="false" onAction="#importChi" prefHeight="40.0" prefWidth="90.0" text="Nhập file" />
+                                        <Button layoutX="322.0" layoutY="10.0" mnemonicParsing="false" onAction="#exportChi" prefHeight="40.0" prefWidth="90.0" text="Xuất file" />
+                                    </children>
+                                </HBox>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+    </children>
+</AnchorPane>

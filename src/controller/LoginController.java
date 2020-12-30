@@ -32,7 +32,7 @@ public class LoginController {
 		controller.setUsername(username);
     	
         Stage stage = (Stage)((Node) event.getSource()).getScene().getWindow();
-        stage.setScene(new Scene(root,1072,651));
+        stage.setScene(new Scene(root));
         stage.show();
     }
 }

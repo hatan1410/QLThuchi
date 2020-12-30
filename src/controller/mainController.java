@@ -6,8 +6,6 @@ import java.sql.SQLException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 
@@ -24,7 +22,7 @@ public class mainController {
     @FXML
     public void showThuChi(ActionEvent event) throws IOException, SQLException {
     	
-    	FXMLLoader loader = new FXMLLoader(ThuChiController.class.getResource("/view/ThuChiView2.fxml"));
+    	FXMLLoader loader = new FXMLLoader(ThuChiController.class.getResource("/view/main/ThuChiView2.fxml"));
 		Pane thuchiPane = (Pane) loader.load();
 		ThuChiController controller = loader.getController();
 		controller.setUsername(username);
