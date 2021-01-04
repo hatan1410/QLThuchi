@@ -8,30 +8,32 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 
-<AnchorPane prefHeight="651.0" prefWidth="800.0" style="-fx-background-color: F4F4F4;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ThuChiController">
+<AnchorPane prefHeight="651.0" prefWidth="800.0" style="-fx-background-color: F4F4F4;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Vi.viController">
     <children>
-              <TableView fx:id="tvThu" layoutY="122.0" prefHeight="524.0" prefWidth="790.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="122.0">
+              <TableView fx:id="tableVi" layoutY="122.0" prefHeight="524.0" prefWidth="790.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="122.0">
                   <columns>
-                      <TableColumn fx:id="colMaThu" prefWidth="103.0" text="Mã thu" />
-                      <TableColumn fx:id="colMaDMThu" prefWidth="111.0" text="Mã danh mục" />
-                      <TableColumn fx:id="colTenDMThu" prefWidth="136.0" text="Tên danh mục" />
-                      <TableColumn fx:id="colTienThu" prefWidth="118.0" text="Số tiền" />
-                      <TableColumn fx:id="colNgayThu" prefWidth="101.0" text="Ngày" />
-                      <TableColumn fx:id="colMaViThu" prefWidth="112.0" text="Mã ví" />
-                      <TableColumn fx:id="colViThu" prefWidth="108.0" text="Ví" />
+                      <TableColumn fx:id="colMaVi" prefWidth="103.0" text="Mã ví" />
+                      <TableColumn fx:id="colTenVi" prefWidth="194.39996337890625" text="Tên ví" />
+                      <TableColumn fx:id="colSoTien" prefWidth="264.0" text="Số tiền" />
+                      <TableColumn fx:id="colLoaiVi" prefWidth="228.7999267578125" text="Loại ví" />
                   </columns>
               </TableView>
-              <HBox prefHeight="51.0" prefWidth="549.0" spacing="10.0" AnchorPane.bottomAnchor="525.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="30.0">
+              <HBox layoutX="5.0" layoutY="14.0" prefHeight="42.0" prefWidth="790.0" spacing="10.0" AnchorPane.bottomAnchor="595.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="14.0">
                   <children>
-                      <TextField fx:id="tfSearchThu" maxHeight="40.0" maxWidth="220.0" prefHeight="40.0" prefWidth="220.0" />
-                      <ComboBox fx:id="cbSearchThu" prefHeight="40.0" prefWidth="100.0" />
-                      <Button mnemonicParsing="false" onAction="#searchThu" prefHeight="40.0" prefWidth="100.0" text="Tìm kiếm" />
-                      <Button layoutX="160.0" layoutY="10.0" mnemonicParsing="false" onAction="#addThu" prefHeight="40.0" prefWidth="100.0" text="Thêm mới" />
-                      <Button layoutX="238.0" layoutY="10.0" mnemonicParsing="false" onAction="#updateThu" prefHeight="40.0" prefWidth="100.0" text="Sửa" />
-                      <Button layoutX="316.0" layoutY="10.0" mnemonicParsing="false" onAction="#deleteThu" prefHeight="40.0" prefWidth="100.0" text="Xóa" />
-                      <Button layoutX="394.0" layoutY="10.0" mnemonicParsing="false" onAction="#importFile" prefHeight="40.0" prefWidth="100.0" text="Nhập file" />
-                      <Button layoutX="472.0" layoutY="10.0" mnemonicParsing="false" onAction="#exportFile" prefHeight="40.0" prefWidth="100.0" text="Xuất file" />
+                      <Button layoutX="160.0" layoutY="10.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="100.0" text="Thêm mới" />
+                      <Button layoutX="238.0" layoutY="10.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="100.0" text="Sửa" />
+                      <Button layoutX="316.0" layoutY="10.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="100.0" text="Xóa" />
+            <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="100.0" text="Thêm tiết kiệm" />
+                      <Button layoutX="394.0" layoutY="10.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="100.0" text="Nhập file" />
+                      <Button layoutX="472.0" layoutY="10.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="100.0" text="Xuất file" />
                   </children>
               </HBox>
+      <HBox layoutX="7.0" layoutY="70.0" prefHeight="42.0" prefWidth="790.0" spacing="10.0">
+         <children>
+            <TextField fx:id="textSearch" maxHeight="40.0" maxWidth="407.0" prefHeight="40.0" prefWidth="407.0" />
+            <ComboBox fx:id="comboSearch" prefHeight="40.0" prefWidth="178.0" />
+            <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="182.0" text="Tìm kiếm" />
+         </children>
+      </HBox>
     </children>
 </AnchorPane>

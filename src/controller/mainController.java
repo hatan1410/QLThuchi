@@ -4,7 +4,8 @@ import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 
-import com.sun.tools.javac.Main;
+
+import view.Main;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -39,13 +40,15 @@ public class mainController {
     }
 
     @FXML
-    void showDanhmuc(ActionEvent event) throws IOException, SQLException {
-
+    void showDanhmuc(ActionEvent event) {
+        Pane view = getPage("danhmuc");
+        mainpane.setCenter(view);
     }
 
     @FXML
     void showThongKe(ActionEvent event) {
-
+        Pane view = getPage("thongke");
+        mainpane.setCenter(view);
     }
 
     public Pane getPage(String fileName){
