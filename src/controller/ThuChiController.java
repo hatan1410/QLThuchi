@@ -5,8 +5,8 @@ import java.sql.SQLException;
 import java.util.List;
 import java.util.ResourceBundle;
 
-import dao.KhoanChiDAO;
-import dao.KhoanThuDAO;
+import DAO.KhoanChiDAO;
+import DAO.KhoanThuDAO;
 import controller.ThuChi.AddThuController;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;

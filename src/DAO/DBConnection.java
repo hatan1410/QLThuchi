@@ -1,4 +1,4 @@
-package dao;
+package DAO;
 
 import java.sql.*;
 
@@ -7,7 +7,7 @@ public class DBConnection {
 	private static String url = "jdbc:sqlserver://localhost:1433;" +
 			"databaseName=QLCHITIEU;";
 	private static String user = "sa";
-	private static String password = "";
+	private static String password = "123456";
 
 	public static Connection open() throws SQLException {
 		try {
