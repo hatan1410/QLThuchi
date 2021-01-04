@@ -113,9 +113,9 @@ public class ThuChiController implements Initializable {
 		cbSearchThu.setItems(list);
 	}
 	public void initCbTimKiemChi() {
-		ObservableList<String> list = FXCollections.observableArrayList(new String[] { "Mã thu", "Tên danh mục", "Số tiền",
-				"Ngày", "Ví" });
-		cbSearchChi.setItems(list);
+//		ObservableList<String> list = FXCollections.observableArrayList(new String[] { "Mã thu", "Tên danh mục", "Số tiền",
+//				"Ngày", "Ví" });
+//		cbSearchChi.setItems(list);
 	}
 	
 	public void showKhoanThu() throws SQLException {
