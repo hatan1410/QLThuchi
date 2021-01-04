@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 
-
+import controller.ThuChi.ThuChiController;
 import view.Main;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -34,7 +34,7 @@ public class mainController {
     	FXMLLoader loader = new FXMLLoader(ThuChiController.class.getResource("/view/main/ThuChiView2.fxml"));
 		Pane thuchiPane = (Pane) loader.load();
 		ThuChiController controller = loader.getController();
-		controller.setUsername(username);
+		//controller.setUsername(username);
 		mainpane.setCenter(thuchiPane);
 
     }
