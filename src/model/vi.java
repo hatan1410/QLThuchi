@@ -16,11 +16,11 @@ public class vi {
         this.loaiVi = loaiVi;
     }
 
-    public int getidVi() {
+    public int getIdVi() {
         return idVi;
     }
 
-    public void setidVi(int idVi) {
+    public void setIdVi(int idVi) {
         this.idVi = idVi;
     }
 

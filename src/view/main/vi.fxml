@@ -20,19 +20,18 @@
               </TableView>
               <HBox layoutX="5.0" layoutY="14.0" prefHeight="42.0" prefWidth="790.0" spacing="10.0" AnchorPane.bottomAnchor="595.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="14.0">
                   <children>
-                      <Button layoutX="160.0" layoutY="10.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="100.0" text="Thêm mới" />
-                      <Button layoutX="238.0" layoutY="10.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="100.0" text="Sửa" />
-                      <Button layoutX="316.0" layoutY="10.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="100.0" text="Xóa" />
+                      <Button layoutX="160.0" layoutY="10.0" mnemonicParsing="false" onAction="#newVi" prefHeight="40.0" prefWidth="100.0" text="Thêm mới" />
+                      <Button layoutX="238.0" layoutY="10.0" mnemonicParsing="false" onAction="#editVit" prefHeight="40.0" prefWidth="100.0" text="Sửa" />
+                      <Button layoutX="316.0" layoutY="10.0" mnemonicParsing="false" onAction="#deleteVi" prefHeight="40.0" prefWidth="100.0" text="Xóa" />
             <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="100.0" text="Thêm tiết kiệm" />
-                      <Button layoutX="394.0" layoutY="10.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="100.0" text="Nhập file" />
-                      <Button layoutX="472.0" layoutY="10.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="100.0" text="Xuất file" />
+                      <Button layoutX="472.0" layoutY="10.0" mnemonicParsing="false" onAction="#exportSheet" prefHeight="40.0" prefWidth="100.0" text="Xuất file" />
                   </children>
               </HBox>
       <HBox layoutX="7.0" layoutY="70.0" prefHeight="42.0" prefWidth="790.0" spacing="10.0">
          <children>
             <TextField fx:id="textSearch" maxHeight="40.0" maxWidth="407.0" prefHeight="40.0" prefWidth="407.0" />
             <ComboBox fx:id="comboSearch" prefHeight="40.0" prefWidth="178.0" />
-            <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="182.0" text="Tìm kiếm" />
+            <Button mnemonicParsing="false" onAction="#search" prefHeight="40.0" prefWidth="182.0" text="Tìm kiếm" />
          </children>
       </HBox>
     </children>

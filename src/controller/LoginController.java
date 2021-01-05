@@ -24,9 +24,10 @@ public class LoginController {
     private TextField tfUsername;
 
     public static int idUser;
+    public static String username;
 
     public void login(ActionEvent event) throws IOException, SQLException {
-    	String username = tfUsername.getText();
+    	username = tfUsername.getText();
     	String password = tfPassword.getText();
 
         Connection conn = DBConnection.open();
