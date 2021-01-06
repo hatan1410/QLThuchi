@@ -55,6 +55,8 @@ public class AddThuController implements Initializable {
 		KhoanThuModel ktmd = new KhoanThuModel(iDThu, idDM, tenDM, Integer.parseInt(sotien), ngay, idVi, tenViString);
 		KhoanThuDAO.addKhoanThu(ktmd);
 		
+		
+		
         Stage stage = (Stage)((Node) event.getSource()).getScene().getWindow();
         stage.close();
 		

@@ -1,5 +1,6 @@
 package controller.ThuChi;
 
+import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.List;
@@ -8,6 +9,8 @@ import java.util.ResourceBundle;
 
 import dao.KhoanChiDAO;
 import dao.KhoanThuDAO;
+import file.ChiTieuFile;
+import file.ThutienFile;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -266,12 +269,23 @@ public class ThuChiController implements Initializable {
 
 
     @FXML
-    void importFile(ActionEvent event) {
+    void importFile(ActionEvent event) throws IOException, SQLException {
+    	List<KhoanThuModel> listKT = ThutienFile.importFile();
+    	for(KhoanThuModel khoanThuModel : listKT) {
+    		KhoanThuDAO.addKhoanThu(khoanThuModel);
+    	}
+    	
+    	Alert alert2 = new Alert(AlertType.INFORMATION, "Nhập file thành công.", ButtonType.OK);
+		alert2.showAndWait();
+		showKhoanThu();
+    	
 
     }
 
     @FXML
-    void exportFile(ActionEvent event) {
+    void exportFile(ActionEvent event) throws IOException {
+    	List<KhoanThuModel> listKT = listKhoanThu;
+    	ThutienFile.exportFile(listKT);
 
     }
 
@@ -377,12 +391,22 @@ public class ThuChiController implements Initializable {
     }
 
     @FXML
-    void importChi(ActionEvent event) {
+    void importChi(ActionEvent event) throws IOException, SQLException {
+    	List<KhoanChiModel> listKC = ChiTieuFile.importFile();
+    	for(KhoanChiModel temp : listKC) {
+    		KhoanChiDAO.addKhoanChi(temp);
+    	}
+    	String text = "Nhập file thành công. " + listKC.size() + " khoản chi được thêm vào hệ thống";
+    	Alert alert2 = new Alert(AlertType.INFORMATION, text, ButtonType.OK);
+		alert2.showAndWait();
+		showKhoanChi();
 
     }
 
     @FXML
-    void exportChi(ActionEvent event) {
+    void exportChi(ActionEvent event) throws IOException {
+    	List<KhoanChiModel> list = listKhoanChi;
+    	ChiTieuFile.exportFile(list);
 
     }
 

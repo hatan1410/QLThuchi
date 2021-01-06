@@ -18,7 +18,7 @@ public class KhoanThuDAO {
 		ResultSet rSet = null;
 		ArrayList<KhoanThuModel> listThu = new ArrayList<KhoanThuModel>();
 		try {
-			String query = "SELECT Thutien.IDThu, Thutien.IDDanhMuc, DanhMucThu.LoaiDanhMuc, Thutien.SoTien, Thutien.Ngay, Thutien.IDVi, Vi.TenVi\r\n" + 
+			String query = "SELECT DISTINCT Thutien.IDThu, Thutien.IDDanhMuc, DanhMucThu.LoaiDanhMuc, Thutien.SoTien, Thutien.Ngay, Thutien.IDVi, Vi.TenVi\r\n" + 
 					"FROM Thutien, DanhMucThu, Vi\r\n" + 
 					"WHERE Thutien.IDDanhMuc = DanhMucThu.IDDanhMuc \r\n" + 
 					"AND Thutien.IDVi = Vi.IDVi AND Thutien.IDuser = "+ LoginController.idUser + ";";
@@ -60,7 +60,7 @@ public class KhoanThuDAO {
 			String query = "INSERT INTO Thutien VALUES ("+ idUser+","+maVi +"," +maDanhMuc+ "," + soTien+",'" + ngay + "')";
 			System.out.println(query);
 			pStatement = (PreparedStatement) cnn.prepareStatement(query);
-			pStatement.executeUpdate();
+			pStatement.executeQuery();
 			
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -124,7 +124,7 @@ public class KhoanThuDAO {
 		ResultSet rSet = null;
 		ArrayList<KhoanThuModel> listThu = new ArrayList<KhoanThuModel>();
 		try {
-			String query = "SELECT Thutien.IDThu, Thutien.IDDanhMuc, DanhMucThu.LoaiDanhMuc, Thutien.SoTien, Thutien.Ngay, Thutien.IDVi, Vi.TenVi\r\n" + 
+			String query = "SELECT DISTINCT Thutien.IDThu, Thutien.IDDanhMuc, DanhMucThu.LoaiDanhMuc, Thutien.SoTien, Thutien.Ngay, Thutien.IDVi, Vi.TenVi\r\n" + 
 					"FROM Thutien, DanhMucThu, Vi\r\n" + 
 					"WHERE Thutien.IDDanhMuc = DanhMucThu.IDDanhMuc \r\n" + 
 					"AND Thutien.IDVi = Vi.IDVi AND Thutien.IDuser = "+ LoginController.idUser + " AND Thutien."+ dieukien + " ;";

@@ -9,14 +9,18 @@ import java.util.ResourceBundle;
 import controller.LoginController;
 import dao.KhoanChiDAO;
 import dao.KhoanThuDAO;
+import dao.StatisticDAO;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Alert.AlertType;
 import javafx.stage.Stage;
 import model.KhoanChiModel;
 import model.KhoanThuModel;
@@ -48,6 +52,12 @@ public class AddChiController implements Initializable {
 		String tenViString = tfMaVi.getText();
 		KhoanChiModel ktmd = new KhoanChiModel(iDThu, idDM, tenDM, Integer.parseInt(sotien), ngay, idVi, tenViString);
 		KhoanChiDAO.addKhoanChi(ktmd);
+		int sotienvi = StatisticDAO.getTongViID(idVi);
+		if( sotienvi < 0) {
+			Alert alert = new Alert(AlertType.WARNING, "Bạn hết tiền ở ví này rồi đấy", ButtonType.OK);
+			alert.setHeaderText(null);
+			alert.showAndWait();
+		}
 		
         Stage stage = (Stage)((Node) event.getSource()).getScene().getWindow();
         stage.close();
