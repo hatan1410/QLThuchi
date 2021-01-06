@@ -20,9 +20,9 @@ public class KhoanChiDAO {
 		ResultSet rSet = null;
 		ArrayList<KhoanChiModel> listChi = new ArrayList<KhoanChiModel>();
 		try {
-			String query = "SELECT DISTINCT ChiTieu.IDChi,ChiTieu.IDDanhMuc,DanhMucChi.LoaiDanhMuc,ChiTieu.SoTien, ChiTieu.Ngay,ChiTieu.IDVi, Vi.TenVi\r\n" + 
-					"FROM ChiTieu, DanhMucChi, Vi\r\n" + 
-					"WHERE ChiTieu.IDDanhMuc = DanhMucChi.IDDanhMuc \r\n" + 
+			String query = "SELECT DISTINCT ChiTieu.IDChi,ChiTieu.IDDanhMuc,danhmucchi.LoaiDanhMuc,ChiTieu.SoTien, ChiTieu.Ngay,ChiTieu.IDVi, Vi.TenVi\r\n" +
+					"FROM ChiTieu, (select * from DanhMucChi where IDuser = "+LoginController.idUser+") as danhmucchi, (select * from Vi where IDuser = "+LoginController.idUser+") as vi\r\n" +
+					"WHERE ChiTieu.IDDanhMuc = danhmucchi.IDDanhMuc \r\n" +
 					"AND ChiTieu.IDVi = Vi.IDVi AND ChiTieu.IDuser = "+ LoginController.idUser + "";
 			System.out.println(query);
 			pStatement = (PreparedStatement) cnn.prepareStatement(query);
@@ -123,9 +123,9 @@ public class KhoanChiDAO {
 		ResultSet rSet = null;
 		ArrayList<KhoanChiModel> listChi = new ArrayList<KhoanChiModel>();
 		try {
-			String query = "SELECT DISTINCT ChiTieu.IDChi,ChiTieu.IDDanhMuc,DanhMucChi.LoaiDanhMuc,ChiTieu.SoTien, ChiTieu.Ngay,ChiTieu.IDVi, Vi.TenVi\r\n" + 
-					"FROM ChiTieu, DanhMucChi, Vi\r\n" + 
-					"WHERE ChiTieu.IDDanhMuc = DanhMucChi.IDDanhMuc \r\n" + 
+			String query = "SELECT DISTINCT ChiTieu.IDChi,ChiTieu.IDDanhMuc,danhmucchi.LoaiDanhMuc,ChiTieu.SoTien, ChiTieu.Ngay,ChiTieu.IDVi, Vi.TenVi\r\n" +
+					"FROM ChiTieu, (select * from DanhMucChi where IDuser = "+LoginController.idUser+") as danhmucchi, (select * from Vi where IDuser = "+LoginController.idUser+") as vi\r\n" +
+					"WHERE ChiTieu.IDDanhMuc = danhmucchi.IDDanhMuc \r\n" +
 					"AND ChiTieu.IDVi = Vi.IDVi AND ChiTieu.IDuser = "+ LoginController.idUser +" AND ChiTieu."+ dieukien + " ;";
 			System.out.println(query);
 			pStatement = (PreparedStatement) cnn.prepareStatement(query);

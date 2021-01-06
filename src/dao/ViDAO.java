@@ -72,7 +72,7 @@ public class ViDAO {
         pst.close();
     }
 
-    public void deleteListBook(int idVi) throws SQLException {
+    public void deleteListVi(int idVi) throws SQLException {
         Connection conn = DBConnection.open();
         String sql = "Delete from Vi where IDVi = ? and IDuser = ?";
         PreparedStatement pst = conn.prepareStatement(sql);

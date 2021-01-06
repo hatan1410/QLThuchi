@@ -55,7 +55,7 @@ public class danhmucDAO {
         return list;
     }
 
-    public void addListDanhmucThu(DanhMucThu thuModel) throws SQLException {
+    public void addListDanhmuc(DanhMucThu thuModel) throws SQLException {
         Connection conn = DBConnection.open();
         String sql1 = "select max(IDDanhMuc) as idMax from DanhMucThu where IDuser = "+LoginController.idUser;
         ResultSet rs1 = DBConnection.getData(sql1,conn);
@@ -74,7 +74,7 @@ public class danhmucDAO {
         pst.close();
     }
 
-    public void addListDanhmucChi(DanhMucChi chiModel) throws SQLException {
+    public void addListDanhmuc(DanhMucChi chiModel) throws SQLException {
         Connection conn = DBConnection.open();
         String sql1 = "select max(IDDanhMuc) as idMax from DanhMucChi where IDuser = "+LoginController.idUser;
         ResultSet rs1 = DBConnection.getData(sql1,conn);
@@ -87,6 +87,70 @@ public class danhmucDAO {
         PreparedStatement pst = conn.prepareStatement(sql2);
         pst.setInt(1, LoginController.idUser);
         pst.setString(2,chiModel.getTenChi());
+
+        pst.executeUpdate();
+        conn.close();
+        pst.close();
+    }
+
+    public void editListDanhmuc(DanhMucThu thuModel) throws SQLException {
+        Connection conn = DBConnection.open();
+        String sql = "Update DanhMucThu set LoaiDanhMuc = ? where IDuser = ? and IDDanhMuc = ?";
+        PreparedStatement pst = conn.prepareStatement(sql);
+        pst.setString(1,thuModel.getTenThu());
+        pst.setInt(2,LoginController.idUser);
+        pst.setInt(3, thuModel.getId());
+
+        pst.executeUpdate();
+        conn.close();
+        pst.close();
+    }
+
+    public void editListDanhmuc(DanhMucChi chiModel) throws SQLException {
+        Connection conn = DBConnection.open();
+        String sql = "Update DanhMucChi set LoaiDanhMuc = ? where IDuser = ? and IDDanhMuc = ?";
+        PreparedStatement pst = conn.prepareStatement(sql);
+        pst.setString(1,chiModel.getTenChi());
+        pst.setInt(2,LoginController.idUser);
+        pst.setInt(3, chiModel.getId());
+
+        pst.executeUpdate();
+        conn.close();
+        pst.close();
+    }
+
+
+    public void deleteListDanhmuc(int idDanhmuc, DanhMucThu thuModel) throws SQLException {
+        Connection conn = DBConnection.open();
+        String sql = "Delete from DanhMucThu where IDDanhMuc = ? and IDuser = ?";
+        PreparedStatement pst = conn.prepareStatement(sql);
+        pst.setInt(1,idDanhmuc);
+        pst.setInt(2,LoginController.idUser);
+
+        pst.execute();
+        conn.close();
+        pst.close();
+    }
+
+    public void deleteListDanhmuc(int idDanhmuc, DanhMucChi chiModel) throws SQLException {
+        Connection conn = DBConnection.open();
+        String sql = "Delete from DanhMucChi where IDDanhMuc = ? and IDuser = ?";
+        PreparedStatement pst = conn.prepareStatement(sql);
+        pst.setInt(1,idDanhmuc);
+        pst.setInt(2,LoginController.idUser);
+
+        pst.execute();
+        conn.close();
+        pst.close();
+    }
+
+    public void themListNganSach(DanhMucChi chiModel) throws SQLException {
+        Connection conn = DBConnection.open();
+        String sql = "Update DanhMucChi set SoTien = ? where IDuser = ? and IDDanhMuc = ?";
+        PreparedStatement pst = conn.prepareStatement(sql);
+        pst.setInt(1,chiModel.getNganSach());
+        pst.setInt(2,LoginController.idUser);
+        pst.setInt(3, chiModel.getId());
 
         pst.executeUpdate();
         conn.close();

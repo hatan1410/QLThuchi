@@ -18,10 +18,10 @@ public class KhoanThuDAO {
 		ResultSet rSet = null;
 		ArrayList<KhoanThuModel> listThu = new ArrayList<KhoanThuModel>();
 		try {
-			String query = "SELECT DISTINCT Thutien.IDThu, Thutien.IDDanhMuc, DanhMucThu.LoaiDanhMuc, Thutien.SoTien, Thutien.Ngay, Thutien.IDVi, Vi.TenVi\r\n" + 
-					"FROM Thutien, DanhMucThu, Vi\r\n" + 
-					"WHERE Thutien.IDDanhMuc = DanhMucThu.IDDanhMuc \r\n" + 
-					"AND Thutien.IDVi = Vi.IDVi AND Thutien.IDuser = "+ LoginController.idUser + ";";
+			String query = "SELECT DISTINCT Thutien.IDThu, Thutien.IDDanhMuc, danhmucthu.LoaiDanhMuc, Thutien.SoTien, Thutien.Ngay, Thutien.IDVi, vi.TenVi\r\n" +
+					"FROM Thutien, (select * from DanhMucThu where IDuser = "+LoginController.idUser+") as danhmucthu, (select * from Vi where IDuser = "+LoginController.idUser+") as vi\r\n" +
+					"WHERE Thutien.IDDanhMuc = danhmucthu.IDDanhMuc \r\n" +
+					"AND Thutien.IDVi = vi.IDVi AND Thutien.IDuser = "+ LoginController.idUser + ";";
 			System.out.println(query);
 			pStatement = (PreparedStatement) cnn.prepareStatement(query);
 			rSet = pStatement.executeQuery();
@@ -124,9 +124,9 @@ public class KhoanThuDAO {
 		ResultSet rSet = null;
 		ArrayList<KhoanThuModel> listThu = new ArrayList<KhoanThuModel>();
 		try {
-			String query = "SELECT DISTINCT Thutien.IDThu, Thutien.IDDanhMuc, DanhMucThu.LoaiDanhMuc, Thutien.SoTien, Thutien.Ngay, Thutien.IDVi, Vi.TenVi\r\n" + 
-					"FROM Thutien, DanhMucThu, Vi\r\n" + 
-					"WHERE Thutien.IDDanhMuc = DanhMucThu.IDDanhMuc \r\n" + 
+			String query = "SELECT DISTINCT Thutien.IDThu, Thutien.IDDanhMuc, danhmucthu.LoaiDanhMuc, Thutien.SoTien, Thutien.Ngay, Thutien.IDVi, Vi.TenVi\r\n" +
+					"FROM Thutien, (select * from DanhMucThu where IDuser = "+LoginController.idUser+") as danhmucthu, (select * from Vi where IDuser = "+LoginController.idUser+") as vi\r\n" +
+					"WHERE Thutien.IDDanhMuc = danhmucthu.IDDanhMuc \r\n" +
 					"AND Thutien.IDVi = Vi.IDVi AND Thutien.IDuser = "+ LoginController.idUser + " AND Thutien."+ dieukien + " ;";
 			System.out.println(query);
 			pStatement = (PreparedStatement) cnn.prepareStatement(query);

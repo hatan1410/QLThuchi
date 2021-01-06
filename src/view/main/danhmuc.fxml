@@ -34,14 +34,14 @@
       <TableView fx:id="tableThu" layoutX="5.0" layoutY="106.0" prefHeight="539.0" prefWidth="386.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0">
         <columns>
           <TableColumn fx:id="colidThu" prefWidth="96.0" text="ID" />
-          <TableColumn fx:id="colThu" prefWidth="289.60003662109375" text="Tên danh mục" />
+          <TableColumn fx:id="colThu" prefWidth="289.6000122070312" text="Tên danh mục" />
         </columns>
       </TableView>
       <TableView fx:id="tableChi" layoutX="400.0" layoutY="106.0" prefHeight="539.0" prefWidth="386.0" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="10.0">
          <columns>
             <TableColumn fx:id="colidChi" prefWidth="75.0" text="ID" />
             <TableColumn fx:id="colChi" prefWidth="162.39996337890625" text="Tên danh mục" />
-            <TableColumn fx:id="colNgansach" prefWidth="156.00006103515625" text="Ngân sách tháng" />
+            <TableColumn fx:id="colNgansach" prefWidth="148.0000061035156" text="Ngân sách tháng" />
          </columns>
       </TableView>
       <Label layoutX="11.0" layoutY="75.0" text="Danh mục thu" textFill="#df836e" AnchorPane.leftAnchor="11.0">

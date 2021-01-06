@@ -39,14 +39,13 @@ public class addDanhmucController implements Initializable {
             if(comboDanhmuc.getValue().equals("Khoản Thu")){
                 DanhMucThu thuModel = new DanhMucThu(0, textDanhmuc.getText());
                 danhmucDAO danhmucDAO = new danhmucDAO();
-                danhmucDAO.addListDanhmucThu(thuModel);
+                danhmucDAO.addListDanhmuc(thuModel);
             }
             else if(comboDanhmuc.getValue().equals("Khoản Chi")){
                 DanhMucChi chiModel = new DanhMucChi(0,textDanhmuc.getText(),0);
                 danhmucDAO danhmucDAO = new danhmucDAO();
-                danhmucDAO.addListDanhmucChi(chiModel);
+                danhmucDAO.addListDanhmuc(chiModel);
             }
-
         }
     }
 

@@ -10,7 +10,7 @@
 
 <AnchorPane prefHeight="651.0" prefWidth="800.0" style="-fx-background-color: F4F4F4;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Vi.viController">
     <children>
-              <TableView fx:id="tableVi" layoutY="122.0" prefHeight="524.0" prefWidth="790.0" stylesheets="@../../static/css/fullpackstyling.css" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="122.0">
+              <TableView fx:id="tableVi" layoutY="122.0" prefHeight="524.0" prefWidth="790.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="122.0">
                   <columns>
                       <TableColumn fx:id="colMaVi" prefWidth="103.0" text="Mã ví" />
                       <TableColumn fx:id="colTenVi" prefWidth="194.39996337890625" text="Tên ví" />

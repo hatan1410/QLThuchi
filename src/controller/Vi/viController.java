@@ -127,7 +127,7 @@ public class viController implements Initializable {
 
             if (rs.get() == ButtonType.OK) {
                 int IDVi = viModel.getIdVi();
-                viDAO.deleteListBook(IDVi);
+                viDAO.deleteListVi(IDVi);
                 tableVi.getItems().removeAll(viModel);
             }
         }
