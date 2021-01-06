@@ -10,7 +10,7 @@
 
 <AnchorPane prefHeight="651.0" prefWidth="800.0" style="-fx-background-color: F4F4F4;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Vi.viController">
     <children>
-              <TableView fx:id="tableVi" layoutY="122.0" prefHeight="524.0" prefWidth="790.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="122.0">
+              <TableView fx:id="tableVi" layoutY="122.0" prefHeight="524.0" prefWidth="790.0" stylesheets="@../../static/css/fullpackstyling.css" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="122.0">
                   <columns>
                       <TableColumn fx:id="colMaVi" prefWidth="103.0" text="Mã ví" />
                       <TableColumn fx:id="colTenVi" prefWidth="194.39996337890625" text="Tên ví" />
@@ -18,20 +18,20 @@
                       <TableColumn fx:id="colLoaiVi" prefWidth="228.7999267578125" text="Loại ví" />
                   </columns>
               </TableView>
-              <HBox layoutX="5.0" layoutY="14.0" prefHeight="42.0" prefWidth="790.0" spacing="10.0" AnchorPane.bottomAnchor="595.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="14.0">
+              <HBox alignment="BASELINE_RIGHT" layoutX="5.0" layoutY="14.0" prefHeight="42.0" prefWidth="790.0" spacing="10.0" AnchorPane.bottomAnchor="595.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="14.0">
                   <children>
-                      <Button layoutX="160.0" layoutY="10.0" mnemonicParsing="false" onAction="#newVi" prefHeight="40.0" prefWidth="100.0" text="Thêm mới" />
-                      <Button layoutX="238.0" layoutY="10.0" mnemonicParsing="false" onAction="#editVit" prefHeight="40.0" prefWidth="100.0" text="Sửa" />
-                      <Button layoutX="316.0" layoutY="10.0" mnemonicParsing="false" onAction="#deleteVi" prefHeight="40.0" prefWidth="100.0" text="Xóa" />
-            <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="100.0" text="Thêm tiết kiệm" />
-                      <Button layoutX="472.0" layoutY="10.0" mnemonicParsing="false" onAction="#exportSheet" prefHeight="40.0" prefWidth="100.0" text="Xuất file" />
+                      <Button layoutX="160.0" layoutY="10.0" mnemonicParsing="false" onAction="#newVi" prefHeight="40.0" prefWidth="100.0" stylesheets="@../../static/css/fullpackstyling.css" text="Thêm mới" textFill="WHITE" />
+                      <Button layoutX="238.0" layoutY="10.0" mnemonicParsing="false" onAction="#editVit" prefHeight="40.0" prefWidth="100.0" stylesheets="@../../static/css/fullpackstyling.css" text="Sửa" textFill="WHITE" />
+                      <Button layoutX="316.0" layoutY="10.0" mnemonicParsing="false" onAction="#deleteVi" prefHeight="40.0" prefWidth="100.0" stylesheets="@../../static/css/fullpackstyling.css" text="Xóa" textFill="WHITE" />
+            <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="100.0" stylesheets="@../../static/css/fullpackstyling.css" text="Thêm tiết kiệm" textFill="WHITE" />
+                      <Button layoutX="472.0" layoutY="10.0" mnemonicParsing="false" onAction="#exportSheet" prefHeight="40.0" prefWidth="100.0" stylesheets="@../../static/css/fullpackstyling.css" text="Xuất file" textFill="WHITE" />
                   </children>
               </HBox>
-      <HBox layoutX="7.0" layoutY="70.0" prefHeight="42.0" prefWidth="790.0" spacing="10.0">
+      <HBox layoutX="7.0" layoutY="70.0" prefHeight="42.0" prefWidth="790.0" spacing="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
          <children>
-            <TextField fx:id="textSearch" maxHeight="40.0" maxWidth="407.0" prefHeight="40.0" prefWidth="407.0" />
-            <ComboBox fx:id="comboSearch" prefHeight="40.0" prefWidth="178.0" />
-            <Button mnemonicParsing="false" onAction="#search" prefHeight="40.0" prefWidth="182.0" text="Tìm kiếm" />
+            <TextField fx:id="textSearch" maxHeight="40.0" maxWidth="407.0" prefHeight="40.0" prefWidth="407.0" style="-fx-border-color: #5EC960;" />
+            <ComboBox fx:id="comboSearch" prefHeight="40.0" prefWidth="178.0" style="-fx-border-color: #5EC960; -fx-background-color: #ffffff;" />
+            <Button mnemonicParsing="false" onAction="#search" prefHeight="40.0" prefWidth="182.0" stylesheets="@../../static/css/fullpackstyling.css" text="Tìm kiếm" textFill="WHITE" />
          </children>
       </HBox>
     </children>
