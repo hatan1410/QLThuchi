@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="333.0" prefWidth="360.0" style="-fx-background-color: #f4f4f4;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.tietkiem.addTietkiemController">
+    <children>
+        <AnchorPane layoutY="83.0" prefHeight="352.0" prefWidth="360.0">
+            <children>
+                <GridPane layoutY="5.0" prefHeight="293.0" prefWidth="344.0">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="232.5999755859375" minWidth="10.0" prefWidth="93.6" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="452.7999755859375" minWidth="10.0" prefWidth="252.79999999999998" />
+                    </columnConstraints>
+                    <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                    <children>
+                        <Label alignment="CENTER" prefHeight="30.0" prefWidth="115.0" text="Ngày gửi" GridPane.rowIndex="2">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                        </Label>
+                        <Label alignment="CENTER" prefHeight="30.0" prefWidth="115.0" text="Kỳ hạn" GridPane.rowIndex="3">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                        </Label>
+                        <Label alignment="CENTER" prefHeight="30.0" prefWidth="115.0" text="Lãi suất" GridPane.rowIndex="4">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                        </Label>
+                        <TextField fx:id="textKyhan" prefHeight="26.0" prefWidth="320.0" style="-fx-border-color: #5ec960;" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <TextField fx:id="textLaisuat" prefHeight="26.0" prefWidth="320.0" style="-fx-border-color: #5ec960;" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <DatePicker fx:id="dateNgaygui" prefHeight="26.0" prefWidth="256.0" style="-fx-background-color: #ffffff; -fx-border-color: #5ec960;" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <Label alignment="CENTER" prefHeight="30.0" prefWidth="115.0" text="Số tiền">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="textSotien" prefHeight="26.0" prefWidth="320.0" style="-fx-border-color: #5ec960;" GridPane.columnIndex="1" />
+                  <Label alignment="CENTER" prefHeight="30.0" prefWidth="115.0" text="Từ ví" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="10.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <children>
+                        <ComboBox fx:id="comboVi" onAction="#selectVi" prefHeight="27.0" prefWidth="103.0" style="-fx-background-color: #ffffff; -fx-border-color: #5ec960;" />
+                        <Label fx:id="lbl_tenVi" text="Tên ví" />
+                     </children>
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </HBox>
+                    </children>
+                </GridPane>
+                <Button layoutX="252.0" layoutY="306.0" mnemonicParsing="false" onAction="#addTietkiem" prefHeight="27.0" prefWidth="93.0" stylesheets="@../../static/css/fullpackstyling.css" text="Lưu" textFill="WHITE" />
+            </children>
+        </AnchorPane>
+        <Pane prefHeight="83.0" prefWidth="360.0" style="-fx-background-color: #5ec960;">
+            <children>
+                <Label layoutX="86.0" layoutY="24.0" text="THÊM TIẾT KIỆM" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="24.0" />
+                    </font>
+                </Label>
+            </children>
+        </Pane>
+    </children>
+</AnchorPane>

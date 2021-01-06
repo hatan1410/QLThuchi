@@ -38,6 +38,17 @@
                                         <Insets left="50.0" />
                                     </padding>
                                 </Button>
+                        <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#showTietkiem" prefHeight="61.0" prefWidth="272.0" styleClass="buttonMain" stylesheets="@../../static/css/fullpackstyling.css" text="Tiết kiệm" textFill="WHITE">
+                           <graphic>
+                              <ImageView fitHeight="24.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true" />
+                           </graphic>
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                           <padding>
+                              <Insets left="50.0" />
+                           </padding>
+                        </Button>
                                 <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#showThuChi" prefHeight="61.0" prefWidth="280.0" styleClass="buttonMain" stylesheets="@../../static/css/fullpackstyling.css" text="Thu/Chi" textFill="WHITE">
                                     <graphic>
                                         <ImageView fitHeight="26.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true" />

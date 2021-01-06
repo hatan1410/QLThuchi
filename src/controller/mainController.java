@@ -27,6 +27,11 @@ public class mainController {
         Pane view = getPage("vi");
         mainpane.setCenter(view);
     }
+    @FXML
+    void showTietkiem(ActionEvent event) {
+        Pane view = getPage("tietkiem");
+        mainpane.setCenter(view);
+    }
 
     @FXML
     public void showThuChi(ActionEvent event) throws IOException, SQLException {

@@ -23,7 +23,6 @@
                       <Button layoutX="160.0" layoutY="10.0" mnemonicParsing="false" onAction="#newVi" prefHeight="40.0" prefWidth="100.0" stylesheets="@../../static/css/fullpackstyling.css" text="Thêm mới" textFill="WHITE" />
                       <Button layoutX="238.0" layoutY="10.0" mnemonicParsing="false" onAction="#editVit" prefHeight="40.0" prefWidth="100.0" stylesheets="@../../static/css/fullpackstyling.css" text="Sửa" textFill="WHITE" />
                       <Button layoutX="316.0" layoutY="10.0" mnemonicParsing="false" onAction="#deleteVi" prefHeight="40.0" prefWidth="100.0" stylesheets="@../../static/css/fullpackstyling.css" text="Xóa" textFill="WHITE" />
-            <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="100.0" stylesheets="@../../static/css/fullpackstyling.css" text="Thêm tiết kiệm" textFill="WHITE" />
                       <Button layoutX="472.0" layoutY="10.0" mnemonicParsing="false" onAction="#exportSheet" prefHeight="40.0" prefWidth="100.0" stylesheets="@../../static/css/fullpackstyling.css" text="Xuất file" textFill="WHITE" />
                   </children>
               </HBox>
