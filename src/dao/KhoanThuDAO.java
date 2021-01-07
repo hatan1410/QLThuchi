@@ -245,6 +245,28 @@ public class KhoanThuDAO {
 		return name;
 	}
 	
+	public static String getIDTietKiem() throws SQLException {
+		Connection cnn = DBConnection.open();
+		PreparedStatement pStatement = null;
+		ResultSet rSet = null;
+		String name = "";
+		try {
+			String query = "SELECT DanhMucChi.IDDanhMuc\r\n" + 
+					"FROM DanhMucChi\r\n" + 
+					"WHERE DanhMucChi.LoaiDanhMuc = N'Tiết kiệm'\r\n" + 
+					"AND IDuser =  "+ LoginController.idUser + ";";
+			System.out.println(query);
+			pStatement = (PreparedStatement) cnn.prepareStatement(query);
+			rSet = pStatement.executeQuery();
+			while(rSet.next()) {
+				name = rSet.getString(1);
+			}
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+		return name;
+	}
 	
 	
 	public static void main(String[] args) {

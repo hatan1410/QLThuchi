@@ -128,6 +128,12 @@ public class thongkeController implements Initializable {
 		for (StatisticModel temp : list) {
 			series1.getData().add(new XYChart.Data(temp.getTenDanhMuc(), temp.getSotientt()));
 			series2.getData().add(new XYChart.Data(temp.getTenDanhMuc(), temp.getSotientc()));
+			if(temp.getSotientt() > temp.getSotientc()) {
+				String textString = "Bạn tiêu tiền "+ temp.getTenDanhMuc() + " nhiều hơn tiêu chuẩn rồi đấy";
+				Alert alert = new Alert(AlertType.WARNING, textString, ButtonType.OK);
+				alert.setHeaderText(null);
+				alert.showAndWait();
+			}
 		}
 		bcStatistic.getData().addAll(series1, series2);
 

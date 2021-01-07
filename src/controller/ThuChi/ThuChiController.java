@@ -286,6 +286,8 @@ public class ThuChiController implements Initializable {
     void exportFile(ActionEvent event) throws IOException {
     	List<KhoanThuModel> listKT = listKhoanThu;
     	ThutienFile.exportFile(listKT);
+    	Alert alert2 = new Alert(AlertType.INFORMATION, "Xuất file thành công", ButtonType.OK);
+		alert2.showAndWait();
 
     }
 
@@ -407,6 +409,8 @@ public class ThuChiController implements Initializable {
     void exportChi(ActionEvent event) throws IOException {
     	List<KhoanChiModel> list = listKhoanChi;
     	ChiTieuFile.exportFile(list);
+    	Alert alert2 = new Alert(AlertType.INFORMATION, "Xuất file thành công", ButtonType.OK);
+		alert2.showAndWait();
 
     }
 

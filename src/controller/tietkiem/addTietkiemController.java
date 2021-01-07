@@ -2,7 +2,11 @@ package controller.tietkiem;
 
 import controller.LoginController;
 import dao.DBConnection;
+import dao.KhoanChiDAO;
+import dao.KhoanThuDAO;
+import dao.StatisticDAO;
 import dao.ViDAO;
+import dao.danhmucDAO;
 import dao.tietkiemDAO;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -13,6 +17,8 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import model.DanhMucChi;
+import model.KhoanChiModel;
 import model.tietkiem;
 import model.vi;
 
@@ -81,6 +87,13 @@ public class addTietkiemController implements Initializable {
             tietkiem tietkiemModel = new tietkiem(0, Integer.parseInt(textSotien.getText()), Date.valueOf(dateNgaygui.getValue()), Integer.parseInt(textKyhan.getText()), Float.parseFloat(textLaisuat.getText()));
             tietkiemDAO tietkiemDAO = new tietkiemDAO();
             tietkiemDAO.addListTietkiem(tietkiemModel);
+            DanhMucChi danhMucChi = new DanhMucChi(0, "Tiết kiệm", 0);
+            danhmucDAO dmDao = new danhmucDAO();
+            dmDao.addListDanhmuc(danhMucChi);
+            String idDanhMuc = KhoanThuDAO.getIDTietKiem();
+            KhoanChiModel kChiModel = new KhoanChiModel("", idDanhMuc, "Tiết kiệm",Integer.parseInt(textSotien.getText()), dateNgaygui.getValue().toString(), comboVi.getValue(), "Tiết kiệm");
+            System.out.println(kChiModel.getNgay());
+            KhoanChiDAO.addKhoanChi(kChiModel);
         }
     }
 
